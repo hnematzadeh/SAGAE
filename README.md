@@ -13,4 +13,4 @@ The test samples used in the paper for the MNIST Dataset are x_test[30] = digit 
 
 To ensure 100% reproducibility, the LIME-guided initial population has been provided.
 
-For any inquiries regarding the paper or assistance with running the provided source code, please feel free to contact the author at: hn_61@yahoo.com, hossein_nematzadeh@mcbs.edu.om, or hnematzadeh@uma.es.
+For any inquiries regarding the paper or assistance with running the provided source code, please feel free to contact the author at: hn_61@yahoo.com, hossein.nematzadeh@mcbs.edu.om, or hnematzadeh@uma.es.
