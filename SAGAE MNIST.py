@@ -402,7 +402,8 @@ def mutation(individual, original_image, mutation_rate=0.2):
         "mask": mask_2d.reshape((28, 28, 1)).astype(np.int32), # int32 protects mark_boundaries
         "n_segments": n_segments                 
     }
-############################  SAGA ##################
+############################  SAGAE ##################
+import math
 nfe = 0
 
 avg_fitness_history = []
@@ -438,7 +439,6 @@ for ind in initial_population:
     population.append(ind)
     
 nPop = len(population)
-nm = int(pm * nPop)
 
 # --- 2. Sort Population ---
 population.sort(key=lambda x: x["fitness"], reverse=True)
@@ -480,7 +480,7 @@ for it in range(MAX_ITER):
 
     # --- Mutation ---
     mutants = []
-    nm = int(pm * nPop)
+    nm = math.ceil(pm * nPop)
 
     for _ in range(nm):
         p = random.choice(population)
