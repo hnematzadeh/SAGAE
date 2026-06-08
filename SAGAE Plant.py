@@ -367,6 +367,7 @@ def mutation(individual, original_image, mutation_rate=0.1):
 ###################################################
 ###################################################
 ############################  GA PHASE ############
+import math
 nfe = 0
 target_class = np.argmax(Y)
 
@@ -411,7 +412,6 @@ for ind in initial_population:
     ind["fitness"] = score
     population.append(ind)
 nPop = len(population)
-nm = int(pm * nPop)
 # --- 2. Sort Population ---
 population.sort(key=lambda x: x["fitness"], reverse=True)
 
@@ -452,7 +452,7 @@ for it in range(MAX_ITER):
 
     # --- Mutation ---
     mutants = []
-    nm = int(pm * nPop)
+    nm = math.ceil(pm * nPop)
 
     for _ in range(nm):
         p = random.choice(population)
